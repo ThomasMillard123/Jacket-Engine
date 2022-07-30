@@ -1,0 +1,52 @@
+
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+/.vs/
+/x64/
+/x64/Debug/*.pdb
+/x64/Debug/*.obj
+/x64/Debug/*.ilk
+/x64/Debug/*.exe
+/x64/Release/*.pdb
+/x64/Release/*.obj
+/x64/Release/*.ilk
+/x64/Release/*.exe
+Jacket/JacketEngine/FrameworkDX11/x64/
+Jacket/JacketEngine/FrameworkDX11/Release/
+Jacket/JacketEngine/FrameworkDX11/Debug/
+Jacket/JacketEngine/x64/
+Jacket/JacketApp/APP/x64/
+Jacket/JacketEngine/.vs/
+Jacket/JacketApp/APP/.vs/
+Jacket/JacketEngine/External/rapidjson/bin/jsonchecker/
