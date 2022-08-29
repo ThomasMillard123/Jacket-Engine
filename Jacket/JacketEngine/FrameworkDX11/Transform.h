@@ -23,7 +23,7 @@ public:
 	void SetPosition(XMFLOAT3 position);
 	void SetPosition(float x, float y, float z);
 	XMFLOAT3 GetPosition() const { return _Position; }
-	Vector3 GetVec3Pos()const { return _Vec3Pos; }
+	Vector3A GetVec3Pos()const { return _Vec3Pos; }
 
 	//scale get/sets
 	void SetScale(XMFLOAT3 scale) { _Scale = scale; }
@@ -47,7 +47,7 @@ private:
 private:
 	//object data
 	XMFLOAT3 _Position;
-	Vector3 _Vec3Pos;
+	Vector3A _Vec3Pos;
 	XMFLOAT3 _Scale;
 	XMFLOAT3 _Rotation;
 	

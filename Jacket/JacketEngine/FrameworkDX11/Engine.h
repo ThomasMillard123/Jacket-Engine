@@ -1,25 +1,32 @@
 #pragma once
 
-
+#include"windowCon.h"
+#include"Graphics.h"
 namespace Engine::Core 
 {
    
     /// <summary>
     /// Controll point of main engein
     /// </summary>
-
-    #include"window.h"
     class EngineClass
     {
     public:
-        bool InitEngine(_In_ HINSTANCE hInstance, _In_ int nCmdShow, std::string WindowTitle, std::string WindowClass);
-        EngineClass* Instance();
+        bool InitEngine( HINSTANCE hInstance, int nCmdShow,int width, int Hight, std::string WindowTitle, std::string WindowClass);
+        static EngineClass* Instance();
 
+        bool ProcessMessages();
+        
+        void Update();
+        void Draw();
+        
     private:
-        EngineClass();
+        EngineClass(){}
         ~EngineClass();
 
 
+    private:
+        HINSTANCE _HInstance;
+        Engine::Core::WindowCon::WindowContainer* _Window;
     };
    
 }

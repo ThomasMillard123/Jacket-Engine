@@ -2,7 +2,7 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="DDSTextureLoader.cpp">
+    <ClCompile Include="FileLoadExport\DDS\DDSTextureLoader.cpp">
       <Filter>TextureLoading</Filter>
     </ClCompile>
     <ClCompile Include="DrawableGameObject.cpp">
@@ -11,41 +11,41 @@
     <ClCompile Include="DebugOutput.cpp">
       <Filter>DebugSupport</Filter>
     </ClCompile>
-    <ClCompile Include="Camera.cpp">
+    <ClCompile Include="Camera\Camera.cpp">
       <Filter>Camera</Filter>
     </ClCompile>
-    <ClCompile Include="Keyboard.cpp">
+    <ClCompile Include="Input\Keyboard.cpp">
       <Filter>Input\KeyBorad</Filter>
     </ClCompile>
-    <ClCompile Include="KeyboardEvent.cpp">
+    <ClCompile Include="Input\KeyboardEvent.cpp">
       <Filter>Input\KeyBorad</Filter>
     </ClCompile>
-    <ClCompile Include="Mouse_Picking.cpp">
+    <ClCompile Include="Input\Mouse_Picking.cpp">
       <Filter>Input\Mouse</Filter>
     </ClCompile>
-    <ClCompile Include="MouseEvent.cpp">
+    <ClCompile Include="Input\MouseEvent.cpp">
       <Filter>Input\Mouse</Filter>
     </ClCompile>
-    <ClCompile Include="MouseInput.cpp">
+    <ClCompile Include="Input\MouseInput.cpp">
       <Filter>Input\Mouse</Filter>
     </ClCompile>
-    <ClCompile Include="InputControllor.cpp">
+    <ClCompile Include="Input\InputControllor.cpp">
       <Filter>Input</Filter>
     </ClCompile>
     <ClCompile Include="Vector3.cpp">
       <Filter>UsefullFiles</Filter>
     </ClCompile>
     <ClCompile Include="Application.cpp" />
-    <ClCompile Include="CameraController.cpp">
+    <ClCompile Include="Camera\CameraController.cpp">
       <Filter>Camera</Filter>
     </ClCompile>
     <ClCompile Include="ShaderController.cpp">
       <Filter>Shaders</Filter>
     </ClCompile>
-    <ClCompile Include="LightControll.cpp">
+    <ClCompile Include="Lights\LightControll.cpp">
       <Filter>Light</Filter>
     </ClCompile>
-    <ClCompile Include="Light.cpp">
+    <ClCompile Include="Lights\Light.cpp">
       <Filter>Light</Filter>
     </ClCompile>
     <ClCompile Include="Appearance.cpp">
@@ -54,31 +54,31 @@
     <ClCompile Include="Transform.cpp">
       <Filter>ObjectFiles</Filter>
     </ClCompile>
-    <ClCompile Include="RenderTargetControll.cpp">
+    <ClCompile Include="RenderData\RenderTargetControll.cpp">
       <Filter>RenderTarget</Filter>
     </ClCompile>
-    <ClCompile Include="RenderTargetTextureClass.cpp">
+    <ClCompile Include="RenderData\RenderTargetTextureClass.cpp">
       <Filter>RenderTarget</Filter>
     </ClCompile>
     <ClCompile Include="BillboradObject.cpp">
       <Filter>Billboarding</Filter>
     </ClCompile>
-    <ClCompile Include="ShadowMap.cpp">
+    <ClCompile Include="RenderData\ShadowMap.cpp">
       <Filter>ShadowDepth</Filter>
     </ClCompile>
     <ClCompile Include="ImGuiManager.cpp">
       <Filter>DImGUI</Filter>
     </ClCompile>
-    <ClCompile Include="Terrain.cpp">
+    <ClCompile Include="Terrain\Terrain.cpp">
       <Filter>Terrain</Filter>
     </ClCompile>
-    <ClCompile Include="TerrainAppearence.cpp">
+    <ClCompile Include="Terrain\TerrainAppearence.cpp">
       <Filter>Terrain</Filter>
     </ClCompile>
-    <ClCompile Include="TerrainJsonLoad.cpp">
+    <ClCompile Include="Terrain\TerrainJsonLoad.cpp">
       <Filter>Terrain</Filter>
     </ClCompile>
-    <ClCompile Include="TerrainVoxel.cpp">
+    <ClCompile Include="Terrain\TerrainVoxel.cpp">
       <Filter>Terrain</Filter>
     </ClCompile>
     <ClCompile Include="DataStucts.cpp">
@@ -87,7 +87,7 @@
     <ClCompile Include="Bone.cpp">
       <Filter>Annimation</Filter>
     </ClCompile>
-    <ClCompile Include="M3dLoader.cpp">
+    <ClCompile Include="FileLoadExport\M3d\M3dLoader.cpp">
       <Filter>Annimation</Filter>
     </ClCompile>
     <ClCompile Include="AnimatedModel.cpp">
@@ -99,12 +99,29 @@
     <ClCompile Include="Skeleton.cpp">
       <Filter>Annimation</Filter>
     </ClCompile>
-    <ClCompile Include="PerlinNoise.cpp" />
-    <ClCompile Include="window.cpp" />
+    <ClCompile Include="Maths\PerlinNoise.cpp" />
+    <ClCompile Include="windowCon.cpp" />
     <ClCompile Include="Engine.cpp" />
+    <ClCompile Include="Graphics.cpp" />
+    <ClCompile Include="RenderData\Shader\VertexShader.cpp" />
+    <ClCompile Include="RenderData\Shader\Shader.cpp" />
+    <ClCompile Include="RenderData\Shader\PixleShader.cpp" />
+    <ClCompile Include="RenderData\Shader\GeometryShader.cpp" />
+    <ClCompile Include="RenderData\Shader\HullShader.cpp" />
+    <ClCompile Include="RenderData\Shader\DomianShader.cpp" />
+    <ClCompile Include="RenderData\Shader\ShaderManager.cpp" />
+    <ClCompile Include="RenderData\Buffer.cpp" />
+    <ClCompile Include="ObjectData\Materials\Material.cpp" />
+    <ClCompile Include="ObjectData\RenderObject\Object.cpp" />
+    <ClCompile Include="ObjectData\Textures\Texture.cpp" />
+    <ClCompile Include="ObjectData\TextureManager.cpp" />
+    <ClCompile Include="ObjectData\ObjectManager.cpp" />
+    <ClCompile Include="ObjectData\RenderObject\AnimatedObject.cpp" />
+    <ClCompile Include="RenderData\RasterStateManager.cpp" />
+    <ClCompile Include="ObjectData\RenderObject\DefaultObject.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DDSTextureLoader.h">
+    <ClInclude Include="FileLoadExport\DDS\DDSTextureLoader.h">
       <Filter>TextureLoading</Filter>
     </ClInclude>
     <ClInclude Include="DrawableGameObject.h">
@@ -119,47 +136,47 @@
     <ClInclude Include="DebugOutput.h">
       <Filter>DebugSupport</Filter>
     </ClInclude>
-    <ClInclude Include="Camera.h">
+    <ClInclude Include="Camera\Camera.h">
       <Filter>Camera</Filter>
     </ClInclude>
-    <ClInclude Include="Keyboard.h">
+    <ClInclude Include="Input\Keyboard.h">
       <Filter>Input\KeyBorad</Filter>
     </ClInclude>
-    <ClInclude Include="KeyboardEvent.h">
+    <ClInclude Include="Input\KeyboardEvent.h">
       <Filter>Input\KeyBorad</Filter>
     </ClInclude>
-    <ClInclude Include="Mouse_Picking.h">
+    <ClInclude Include="Input\Mouse_Picking.h">
       <Filter>Input\Mouse</Filter>
     </ClInclude>
-    <ClInclude Include="MouseEvent.h">
+    <ClInclude Include="Input\MouseEvent.h">
       <Filter>Input\Mouse</Filter>
     </ClInclude>
-    <ClInclude Include="MouseInput.h">
+    <ClInclude Include="Input\MouseInput.h">
       <Filter>Input\Mouse</Filter>
     </ClInclude>
-    <ClInclude Include="InputControllor.h">
+    <ClInclude Include="Input\InputControllor.h">
       <Filter>Input</Filter>
     </ClInclude>
     <ClInclude Include="Utilitys\C++HelperFunctions.h">
       <Filter>UsefullFiles</Filter>
     </ClInclude>
-    <ClInclude Include="Quaternion.h">
+    <ClInclude Include="Maths\Quaternion.h">
       <Filter>UsefullFiles</Filter>
     </ClInclude>
     <ClInclude Include="Vector3.h">
       <Filter>UsefullFiles</Filter>
     </ClInclude>
     <ClInclude Include="Application.h" />
-    <ClInclude Include="CameraController.h">
+    <ClInclude Include="Camera\CameraController.h">
       <Filter>Camera</Filter>
     </ClInclude>
     <ClInclude Include="ShaderController.h">
       <Filter>Shaders</Filter>
     </ClInclude>
-    <ClInclude Include="LightControll.h">
+    <ClInclude Include="Lights\LightControll.h">
       <Filter>Light</Filter>
     </ClInclude>
-    <ClInclude Include="Light.h">
+    <ClInclude Include="Lights\Light.h">
       <Filter>Light</Filter>
     </ClInclude>
     <ClInclude Include="Appearance.h">
@@ -168,31 +185,31 @@
     <ClInclude Include="Transform.h">
       <Filter>ObjectFiles</Filter>
     </ClInclude>
-    <ClInclude Include="RenderTargetTextureClass.h">
+    <ClInclude Include="RenderData\RenderTargetTextureClass.h">
       <Filter>RenderTarget</Filter>
     </ClInclude>
-    <ClInclude Include="RenderTargetControll.h">
+    <ClInclude Include="RenderData\RenderTargetControll.h">
       <Filter>RenderTarget</Filter>
     </ClInclude>
     <ClInclude Include="BillboradObject.h">
       <Filter>Billboarding</Filter>
     </ClInclude>
-    <ClInclude Include="ShadowMap.h">
+    <ClInclude Include="RenderData\ShadowMap.h">
       <Filter>ShadowDepth</Filter>
     </ClInclude>
     <ClInclude Include="ImGuiManager.h">
       <Filter>DImGUI</Filter>
     </ClInclude>
-    <ClInclude Include="Terrain.h">
+    <ClInclude Include="Terrain\Terrain.h">
       <Filter>Terrain</Filter>
     </ClInclude>
-    <ClInclude Include="TerrainAppearence.h">
+    <ClInclude Include="Terrain\TerrainAppearence.h">
       <Filter>Terrain</Filter>
     </ClInclude>
-    <ClInclude Include="TerrainJsonLoad.h">
+    <ClInclude Include="Terrain\TerrainJsonLoad.h">
       <Filter>Terrain</Filter>
     </ClInclude>
-    <ClInclude Include="TerrainVoxel.h">
+    <ClInclude Include="Terrain\TerrainVoxel.h">
       <Filter>Terrain</Filter>
     </ClInclude>
     <ClInclude Include="DataStucts.h">
@@ -201,7 +218,7 @@
     <ClInclude Include="Bone.h">
       <Filter>Annimation</Filter>
     </ClInclude>
-    <ClInclude Include="M3dLoader.h">
+    <ClInclude Include="FileLoadExport\M3d\M3dLoader.h">
       <Filter>Annimation</Filter>
     </ClInclude>
     <ClInclude Include="AnimatedModel.h">
@@ -213,11 +230,31 @@
     <ClInclude Include="Skeleton.h">
       <Filter>Annimation</Filter>
     </ClInclude>
-    <ClInclude Include="PerlinNoise.h" />
-    <ClInclude Include="window.h" />
+    <ClInclude Include="Maths\PerlinNoise.h" />
+    <ClInclude Include="windowCon.h" />
     <ClInclude Include="Engine.h" />
     <ClInclude Include="Utilitys\StringHelper.h" />
-    <ClInclude Include="Utilitys\Random.h" />
+    <ClInclude Include="Utilitys\RandFunctions.h" />
+    <ClInclude Include="Graphics.h" />
+    <ClInclude Include="RenderData\Shader\VertexShader.h" />
+    <ClInclude Include="RenderData\Shader\Shader.h" />
+    <ClInclude Include="RenderData\Shader\PixleShader.h" />
+    <ClInclude Include="RenderData\Shader\GeometryShader.h" />
+    <ClInclude Include="RenderData\Shader\HullShader.h" />
+    <ClInclude Include="RenderData\Shader\DomianShader.h" />
+    <ClInclude Include="Utilitys\ListFunctions.h" />
+    <ClInclude Include="RenderData\Shader\ShaderManager.h" />
+    <ClInclude Include="RenderData\Buffer.h" />
+    <ClInclude Include="Maths\Vector2.h" />
+    <ClInclude Include="Maths\Vector3.h" />
+    <ClInclude Include="ObjectData\Materials\Material.h" />
+    <ClInclude Include="ObjectData\RenderObject\Object.h" />
+    <ClInclude Include="ObjectData\Textures\Texture.h" />
+    <ClInclude Include="ObjectData\TextureManager.h" />
+    <ClInclude Include="ObjectData\ObjectManager.h" />
+    <ClInclude Include="ObjectData\RenderObject\AnimatedObject.h" />
+    <ClInclude Include="RenderData\RasterStateManager.h" />
+    <ClInclude Include="ObjectData\RenderObject\DefaultObject.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="TextureLoading">
@@ -298,71 +335,73 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="shaderNoNormalMap.fx">
+    <None Include="RenderData\ObjectShaders\shaderNoNormalMap.fx">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="shaderVertexTBN.fx">
+    <None Include="RenderData\ObjectShaders\shaderVertexTBN.fx">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="shaderParallaxMapping.fx">
+    <None Include="RenderData\ObjectShaders\shaderParallaxMapping.fx">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="shaderParallaxMapping1.fx">
+    <None Include="RenderData\ObjectShaders\shaderParallaxMapping1.fx">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="shaderParallaxOcMapping1.fx">
+    <None Include="RenderData\ObjectShaders\shaderParallaxOcMapping1.fx">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="shaderParallaxOcMapping.fx">
+    <None Include="RenderData\ObjectShaders\shaderParallaxOcMapping.fx">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="shaderParallaxOcShadingMapping.fx">
+    <None Include="RenderData\ObjectShaders\shaderParallaxOcShadingMapping.fx">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="shaderParallaxOcShadingMapping1.fx">
+    <None Include="RenderData\ObjectShaders\shaderParallaxOcShadingMapping1.fx">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="Gaussian1.fx">
+    <None Include="RenderData\PostProcessing\Gaussian1.fx">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="Finalpass.fx">
+    <None Include="RenderData\PostProcessing\Finalpass.fx">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="BloomAlphaTex.fx">
+    <None Include="RenderData\PostProcessing\BloomAlphaTex.fx">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="Gaussian2.fx">
+    <None Include="RenderData\PostProcessing\Gaussian2.fx">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="SolidColour.fx">
+    <None Include="RenderData\ObjectShaders\SolidColour.fx">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="Fade.fx">
+    <None Include="RenderData\PostProcessing\Fade.fx">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="DepthOfField.fx">
+    <None Include="RenderData\PostProcessing\DepthOfField.fx">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="Depth.fx">
+    <None Include="RenderData\PostProcessing\Depth.fx">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="DepthLight.fx">
+    <None Include="RenderData\PostProcessing\DepthLight.fx">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="BillBord.fx">
+    <None Include="RenderData\ObjectShaders\BillBord.fx">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="TerrainA.fx">
+    <None Include="Terrain\TerrainA.fx">
       <Filter>Terrain</Filter>
     </None>
-    <None Include="CubeVoxel.fx">
+    <None Include="RenderData\ObjectShaders\CubeVoxel.fx">
       <Filter>Terrain</Filter>
     </None>
-    <None Include="AnnimationShader.fx">
+    <None Include="RenderData\ObjectShaders\AnnimationShader.fx">
       <Filter>Annimation</Filter>
     </None>
-    <None Include="shader.fx">
+    <None Include="RenderData\ObjectShaders\shader.fx">
       <Filter>Shaders</Filter>
     </None>
+    <None Include="Maths\Vector2.inl" />
+    <None Include="Maths\Vector3.inl" />
   </ItemGroup>
 </Project>

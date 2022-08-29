@@ -8,7 +8,7 @@
 #include"RansterStateManager.h"
 #include"AnimatedModel.h"
 
-
+#include"Utilitys/StringHelper.h"
 
 ImGuiManager::ImGuiManager()
 {
@@ -814,10 +814,10 @@ void ImGuiManager::AnimationControll(AnimatedModel* AnnimationModel)
                     ImGui::Text("%i", data.VertexCount);
                     ImGui::TableNextColumn();
                     wstring DiffMapA = AnnimationModel->GetMaterrialData()[i].DiffuseMapName.c_str();
-                    ImGui::Text(StringHelpers::ws2s(DiffMapA).c_str());
+                    ImGui::Text(Engine::Utilitys::StringFunc::ws2s(DiffMapA).c_str());
                     ImGui::TableNextColumn();
                     wstring normMapA = AnnimationModel->GetMaterrialData()[i].NormalMapName.c_str();
-                    ImGui::Text(StringHelpers::ws2s(normMapA).c_str());
+                    ImGui::Text(Engine::Utilitys::StringFunc::ws2s(normMapA).c_str());
                 }
             ImGui::EndTable();
             ImGui::Text("Model Place");

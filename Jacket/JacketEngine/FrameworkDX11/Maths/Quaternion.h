@@ -159,7 +159,7 @@ public:
 	*
 	* @param scale The amount of the vector to add.
 	*/
-	void addScaledVector(const Vector3& vector, float scale)
+	void addScaledVector(const Vector3A& vector, float scale)
 	{
 		Quaternion q(0,
 			vector.x * scale,
@@ -172,7 +172,7 @@ public:
 		k += q.k * 0.5f;
 	}
 
-	void rotateByVector(const Vector3& vector)
+	void rotateByVector(const Vector3A& vector)
 	{
 		Quaternion q(0, vector.x, vector.y, vector.z);
 		(*this) *= q;
@@ -184,7 +184,7 @@ public:
 * position and orientation.
 */
 static inline void CalculateTransformMatrixColumnMajor(XMMATRIX& transformMatrix,
-	const Vector3& position,
+	const Vector3A& position,
 	const Quaternion& orientation)
 {
 	transformMatrix.r[0] = XMVectorSetX(transformMatrix.r[0], 1 - 2 * orientation.j * orientation.j - 2 * orientation.k * orientation.k);
@@ -217,7 +217,7 @@ static inline void CalculateTransformMatrixColumnMajor(XMMATRIX& transformMatrix
 }
 
 static inline void CalculateTransformMatrixRowMajor(XMMATRIX& transformMatrix,
-	const Vector3& position,
+	const Vector3A& position,
 	const Quaternion& orientation)
 {
 	transformMatrix.r[0] = XMVectorSetX(transformMatrix.r[0], 1 - 2 * orientation.j * orientation.j - 2 * orientation.k * orientation.k);

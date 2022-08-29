@@ -92,38 +92,38 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <GenerateManifest>true</GenerateManifest>
-    <IncludePath>$(SolutionDir)External;</IncludePath>
+    <IncludePath>$(SolutionDir)External\imgui-master;$(SolutionDir)External\rapidjson\include\rapidjson;$(SolutionDir)External;</IncludePath>
     <LibraryPath>$(ProjectDir);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|X64'">
     <LinkIncremental>true</LinkIncremental>
     <GenerateManifest>true</GenerateManifest>
     <ExternalIncludePath>$(ExternalIncludePath)</ExternalIncludePath>
-    <IncludePath>$(SolutionDir)External;$(SolutionDir)External\imgui-master;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)External\imgui-master;$(SolutionDir)External\rapidjson\include\rapidjson;$(SolutionDir)External;$(SolutionDir)External\imgui-master;$(IncludePath)</IncludePath>
     <LibraryPath>$(ProjectDir);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <GenerateManifest>true</GenerateManifest>
-    <IncludePath>$(SolutionDir)External;</IncludePath>
+    <IncludePath>$(SolutionDir)External\imgui-master;$(SolutionDir)External\rapidjson\include\rapidjson;$(SolutionDir)External;</IncludePath>
     <LibraryPath>$(ProjectDir);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|X64'">
     <LinkIncremental>false</LinkIncremental>
     <GenerateManifest>true</GenerateManifest>
-    <IncludePath>$(SolutionDir)External;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)External\imgui-master;$(SolutionDir)External\rapidjson\include\rapidjson;$(SolutionDir)External;$(IncludePath)</IncludePath>
     <LibraryPath>$(ProjectDir);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profile|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <GenerateManifest>true</GenerateManifest>
-    <IncludePath>$(SolutionDir)External;</IncludePath>
+    <IncludePath>$(SolutionDir)External\imgui-master;$(SolutionDir)External\rapidjson\include\rapidjson;$(SolutionDir)External;</IncludePath>
     <LibraryPath>$(ProjectDir);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Profile|X64'">
     <LinkIncremental>false</LinkIncremental>
     <GenerateManifest>true</GenerateManifest>
-    <IncludePath>$(SolutionDir)External;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)External\imgui-master;$(SolutionDir)External\rapidjson\include\rapidjson;$(SolutionDir)External;$(IncludePath)</IncludePath>
     <LibraryPath>$(ProjectDir);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -395,87 +395,124 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="AnimatedModel.h" />
+    <ClInclude Include="ObjectData\RenderObject\DefaultObject.h" />
+    <ClInclude Include="ObjectData\RenderObject\AnimatedObject.h" />
     <ClInclude Include="Appearance.h" />
     <ClInclude Include="Application.h" />
     <ClInclude Include="BillboradObject.h" />
     <ClInclude Include="Bone.h" />
+    <ClInclude Include="RenderData\Buffer.h" />
+    <ClInclude Include="ObjectData\ObjectManager.h" />
+    <ClInclude Include="ObjectData\RenderObject\Object.h" />
+    <ClInclude Include="ObjectData\Materials\Material.h" />
+    <ClInclude Include="Maths\Vector3.h" />
+    <ClInclude Include="RenderData\RasterStateManager.h" />
+    <ClInclude Include="RenderData\Shader\ShaderManager.h" />
+    <ClInclude Include="ObjectData\Textures\Texture.h" />
+    <ClInclude Include="ObjectData\TextureManager.h" />
+    <ClInclude Include="Utilitys\ListFunctions.h" />
+    <ClInclude Include="RenderData\Shader\DomianShader.h" />
+    <ClInclude Include="RenderData\Shader\HullShader.h" />
+    <ClInclude Include="RenderData\Shader\GeometryShader.h" />
+    <ClInclude Include="Graphics.h" />
+    <ClInclude Include="RenderData\Shader\PixleShader.h" />
+    <ClInclude Include="RenderData\Shader\Shader.h" />
     <ClInclude Include="Utilitys\C++HelperFunctions.h" />
-    <ClInclude Include="Camera.h" />
-    <ClInclude Include="CameraController.h" />
+    <ClInclude Include="Camera\Camera.h" />
+    <ClInclude Include="Camera\CameraController.h" />
     <ClInclude Include="DataStucts.h" />
-    <ClInclude Include="DDSTextureLoader.h" />
+    <ClInclude Include="FileLoadExport\DDS\DDSTextureLoader.h" />
     <ClInclude Include="DebugOutput.h" />
     <ClInclude Include="DrawableGameObject.h" />
     <ClInclude Include="Engine.h" />
     <ClInclude Include="ImGuiManager.h" />
-    <ClInclude Include="InputControllor.h" />
-    <ClInclude Include="Keyboard.h" />
-    <ClInclude Include="KeyboardEvent.h" />
-    <ClInclude Include="Light.h" />
-    <ClInclude Include="LightControll.h" />
-    <ClInclude Include="M3dLoader.h" />
-    <ClInclude Include="MouseEvent.h" />
-    <ClInclude Include="MouseInput.h" />
-    <ClInclude Include="Mouse_Picking.h" />
-    <ClInclude Include="PerlinNoise.h" />
-    <ClInclude Include="Quaternion.h" />
+    <ClInclude Include="Input\InputControllor.h" />
+    <ClInclude Include="Input\Keyboard.h" />
+    <ClInclude Include="Input\KeyboardEvent.h" />
+    <ClInclude Include="Lights\Light.h" />
+    <ClInclude Include="Lights\LightControll.h" />
+    <ClInclude Include="FileLoadExport\M3d\M3dLoader.h" />
+    <ClInclude Include="Input\MouseEvent.h" />
+    <ClInclude Include="Input\MouseInput.h" />
+    <ClInclude Include="Input\Mouse_Picking.h" />
+    <ClInclude Include="Maths\PerlinNoise.h" />
+    <ClInclude Include="Maths\Quaternion.h" />
     <ClInclude Include="RansterStateManager.h" />
-    <ClInclude Include="RenderTargetControll.h" />
-    <ClInclude Include="RenderTargetTextureClass.h" />
+    <ClInclude Include="RenderData\RenderTargetControll.h" />
+    <ClInclude Include="RenderData\RenderTargetTextureClass.h" />
     <CLInclude Include="resource.h" />
     <ClInclude Include="ShaderController.h" />
-    <ClInclude Include="ShadowMap.h" />
+    <ClInclude Include="RenderData\ShadowMap.h" />
     <ClInclude Include="Skeleton.h" />
     <ClInclude Include="structures.h" />
-    <ClInclude Include="Terrain.h" />
-    <ClInclude Include="TerrainAppearence.h" />
-    <ClInclude Include="TerrainJsonLoad.h" />
-    <ClInclude Include="TerrainVoxel.h" />
+    <ClInclude Include="Terrain\Terrain.h" />
+    <ClInclude Include="Terrain\TerrainAppearence.h" />
+    <ClInclude Include="Terrain\TerrainJsonLoad.h" />
+    <ClInclude Include="Terrain\TerrainVoxel.h" />
     <ClInclude Include="Transform.h" />
-    <ClInclude Include="Utilitys\Random.h" />
+    <ClInclude Include="Utilitys\RandFunctions.h" />
     <ClInclude Include="Utilitys\StringHelper.h" />
+    <ClInclude Include="Maths\Vector2.h" />
     <ClInclude Include="Vector3.h" />
-    <ClInclude Include="window.h" />
+    <ClInclude Include="RenderData\Shader\VertexShader.h" />
+    <ClInclude Include="windowCon.h" />
     <ResourceCompile Include="Tutorial01.rc" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AnimatedModel.cpp" />
+    <ClCompile Include="ObjectData\RenderObject\DefaultObject.cpp" />
+    <ClCompile Include="ObjectData\RenderObject\AnimatedObject.cpp" />
     <ClCompile Include="Appearance.cpp" />
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="BillboradObject.cpp" />
     <ClCompile Include="Bone.cpp" />
-    <ClCompile Include="Camera.cpp" />
-    <ClCompile Include="CameraController.cpp" />
+    <ClCompile Include="RenderData\Buffer.cpp" />
+    <ClCompile Include="Camera\Camera.cpp" />
+    <ClCompile Include="Camera\CameraController.cpp" />
     <ClCompile Include="DataStucts.cpp" />
-    <ClCompile Include="DDSTextureLoader.cpp" />
+    <ClCompile Include="FileLoadExport\DDS\DDSTextureLoader.cpp" />
     <ClCompile Include="DebugOutput.cpp" />
+    <ClCompile Include="ObjectData\ObjectManager.cpp" />
+    <ClCompile Include="ObjectData\RenderObject\Object.cpp" />
+    <ClCompile Include="ObjectData\Materials\Material.cpp" />
+    <ClCompile Include="RenderData\RasterStateManager.cpp" />
+    <ClCompile Include="RenderData\Shader\ShaderManager.cpp" />
+    <ClCompile Include="RenderData\Shader\DomianShader.cpp" />
     <ClCompile Include="DrawableGameObject.cpp" />
     <ClCompile Include="Engine.cpp" />
+    <ClCompile Include="RenderData\Shader\HullShader.cpp" />
+    <ClCompile Include="RenderData\Shader\GeometryShader.cpp" />
+    <ClCompile Include="Graphics.cpp" />
     <ClCompile Include="ImGuiManager.cpp" />
-    <ClCompile Include="InputControllor.cpp" />
-    <ClCompile Include="Keyboard.cpp" />
-    <ClCompile Include="KeyboardEvent.cpp" />
-    <ClCompile Include="Light.cpp" />
-    <ClCompile Include="LightControll.cpp" />
-    <ClCompile Include="M3dLoader.cpp" />
+    <ClCompile Include="Input\InputControllor.cpp" />
+    <ClCompile Include="Input\Keyboard.cpp" />
+    <ClCompile Include="Input\KeyboardEvent.cpp" />
+    <ClCompile Include="Lights\Light.cpp" />
+    <ClCompile Include="Lights\LightControll.cpp" />
+    <ClCompile Include="FileLoadExport\M3d\M3dLoader.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="MouseEvent.cpp" />
-    <ClCompile Include="MouseInput.cpp" />
-    <ClCompile Include="Mouse_Picking.cpp" />
-    <ClCompile Include="PerlinNoise.cpp" />
+    <ClCompile Include="Input\MouseEvent.cpp" />
+    <ClCompile Include="Input\MouseInput.cpp" />
+    <ClCompile Include="Input\Mouse_Picking.cpp" />
+    <ClCompile Include="Maths\PerlinNoise.cpp" />
+    <ClCompile Include="RenderData\Shader\PixleShader.cpp" />
     <ClCompile Include="RansterStateManager.cpp" />
-    <ClCompile Include="RenderTargetControll.cpp" />
-    <ClCompile Include="RenderTargetTextureClass.cpp" />
+    <ClCompile Include="RenderData\RenderTargetControll.cpp" />
+    <ClCompile Include="RenderData\RenderTargetTextureClass.cpp" />
+    <ClCompile Include="RenderData\Shader\Shader.cpp" />
     <ClCompile Include="ShaderController.cpp" />
-    <ClCompile Include="ShadowMap.cpp" />
+    <ClCompile Include="RenderData\ShadowMap.cpp" />
     <ClCompile Include="Skeleton.cpp" />
-    <ClCompile Include="Terrain.cpp" />
-    <ClCompile Include="TerrainAppearence.cpp" />
-    <ClCompile Include="TerrainJsonLoad.cpp" />
-    <ClCompile Include="TerrainVoxel.cpp" />
+    <ClCompile Include="Terrain\Terrain.cpp" />
+    <ClCompile Include="Terrain\TerrainAppearence.cpp" />
+    <ClCompile Include="Terrain\TerrainJsonLoad.cpp" />
+    <ClCompile Include="Terrain\TerrainVoxel.cpp" />
+    <ClCompile Include="ObjectData\Textures\Texture.cpp" />
+    <ClCompile Include="ObjectData\TextureManager.cpp" />
     <ClCompile Include="Transform.cpp" />
     <ClCompile Include="Vector3.cpp" />
-    <ClCompile Include="window.cpp" />
+    <ClCompile Include="RenderData\Shader\VertexShader.cpp" />
+    <ClCompile Include="windowCon.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Resources\bricks_DISP.dds" />
@@ -484,71 +521,73 @@
     <Image Include="Resources\stone.dds" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="TerrainA.fx">
+    <None Include="Maths\Vector2.inl" />
+    <None Include="Maths\Vector3.inl" />
+    <None Include="Terrain\TerrainA.fx">
       <FileType>Document</FileType>
     </None>
-    <None Include="SolidColour.fx">
+    <None Include="RenderData\ObjectShaders\SolidColour.fx">
       <FileType>Document</FileType>
     </None>
-    <None Include="Gaussian1.fx">
+    <None Include="RenderData\PostProcessing\Gaussian1.fx">
       <FileType>Document</FileType>
     </None>
-    <None Include="Finalpass.fx">
+    <None Include="RenderData\PostProcessing\Finalpass.fx">
       <FileType>Document</FileType>
     </None>
-    <None Include="BloomAlphaTex.fx">
+    <None Include="RenderData\PostProcessing\BloomAlphaTex.fx">
       <FileType>Document</FileType>
     </None>
-    <None Include="Gaussian2.fx">
+    <None Include="RenderData\PostProcessing\Gaussian2.fx">
       <FileType>Document</FileType>
     </None>
-    <None Include="Fade.fx">
+    <None Include="RenderData\PostProcessing\Fade.fx">
       <FileType>Document</FileType>
     </None>
-    <None Include="DepthOfField.fx">
+    <None Include="RenderData\PostProcessing\DepthOfField.fx">
       <FileType>Document</FileType>
     </None>
-    <None Include="Depth.fx">
+    <None Include="RenderData\PostProcessing\Depth.fx">
       <FileType>Document</FileType>
     </None>
-    <None Include="DepthLight.fx">
+    <None Include="RenderData\PostProcessing\DepthLight.fx">
       <FileType>Document</FileType>
     </None>
-    <None Include="BillBord.fx">
+    <None Include="RenderData\ObjectShaders\BillBord.fx">
       <FileType>Document</FileType>
     </None>
-    <None Include="CubeVoxel.fx">
+    <None Include="RenderData\ObjectShaders\CubeVoxel.fx">
       <FileType>Document</FileType>
     </None>
-    <None Include="AnnimationShader.fx">
+    <None Include="RenderData\ObjectShaders\AnnimationShader.fx">
       <FileType>Document</FileType>
     </None>
-    <None Include="shader.fx">
+    <None Include="RenderData\ObjectShaders\shader.fx">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <FileType>Document</FileType>
     </None>
-    <None Include="shaderParallaxOcShadingMapping.fx">
+    <None Include="RenderData\ObjectShaders\shaderParallaxOcShadingMapping.fx">
       <FileType>Document</FileType>
     </None>
-    <None Include="shaderParallaxOcShadingMapping1.fx">
+    <None Include="RenderData\ObjectShaders\shaderParallaxOcShadingMapping1.fx">
       <FileType>Document</FileType>
     </None>
-    <None Include="shaderParallaxOcMapping.fx">
+    <None Include="RenderData\ObjectShaders\shaderParallaxOcMapping.fx">
       <FileType>Document</FileType>
     </None>
-    <None Include="shaderParallaxOcMapping1.fx">
+    <None Include="RenderData\ObjectShaders\shaderParallaxOcMapping1.fx">
       <FileType>Document</FileType>
     </None>
-    <None Include="shaderParallaxMapping1.fx">
+    <None Include="RenderData\ObjectShaders\shaderParallaxMapping1.fx">
       <FileType>Document</FileType>
     </None>
-    <None Include="shaderParallaxMapping.fx">
+    <None Include="RenderData\ObjectShaders\shaderParallaxMapping.fx">
       <FileType>Document</FileType>
     </None>
-    <None Include="shaderVertexTBN.fx">
+    <None Include="RenderData\ObjectShaders\shaderVertexTBN.fx">
       <FileType>Document</FileType>
     </None>
-    <None Include="shaderNoNormalMap.fx">
+    <None Include="RenderData\ObjectShaders\shaderNoNormalMap.fx">
       <FileType>Document</FileType>
     </None>
   </ItemGroup>
