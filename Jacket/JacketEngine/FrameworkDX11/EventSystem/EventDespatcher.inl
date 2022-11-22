@@ -1,8 +1,9 @@
 #include"EventDespatcher.h"
-namespace Engine::Event {
 
-	template<typename EventType>
-	inline size_t EventDespatcher::SubscribeFunction(CallbackFunctionType&& callbackFunction)
+namespace Engine::EventFunc {
+
+	/*template<typename EventType>
+	size_t EventFunc::EventDespatcher::SubscribeFunction(CallbackFunctionType&& callbackFunction)
 	{
 		sm_observers[EventType::sm_descriptor].push_back(callbackFunction);
 		size_t index = sm_observers[EventType::sm_descriptor].size() - 1;
@@ -15,7 +16,7 @@ namespace Engine::Event {
 
 
 	template<typename EventType>
-	inline void EventDespatcher::UnsubscribeFunction(const size_t index)
+	 void EventFunc::EventDespatcher::UnsubscribeFunction(const size_t index)
 	{
 		size_t trueIndex = sm_eventMap[EventType::sm_descriptor][index];
 		if (trueIndex < sm_observers[EventType::sm_descriptor].size())
@@ -35,24 +36,24 @@ namespace Engine::Event {
 
 
 	template<typename EventType>
-	inline void EventDespatcher::UnsubscribeAllFunctions()
+	 void EventFunc::EventDespatcher::UnsubscribeAllFunctions()
 	{
 		sm_observers[EventType::sm_descriptor].clear();
 	}
 
 	template<typename EventType>
-	inline void EventDespatcher::InvokeFunctions()
+	 void EventFunc::EventDespatcher::InvokeFunctions()
 	{
 		InvokeFunctions(EventType::sm_descriptor);
 	}
 
 	template<typename EventType>
-	inline void EventDespatcher::InvokeFunctions(void* data)
+	 void EventFunc::EventDespatcher::InvokeFunctions(void* data)
 	{
 		InvokeFunctions(EventType::sm_descriptor, data);
 	}
 
-	inline void EventDespatcher::UnsubscribeFunction(DescriptorType descriptor, const size_t index)
+	 void EventFunc::EventDespatcher::UnsubscribeFunction(DescriptorType descriptor, const size_t index)
 	{
 		size_t trueIndex = sm_eventMap[descriptor][index];
 		if (trueIndex < sm_observers[descriptor].size())
@@ -70,7 +71,7 @@ namespace Engine::Event {
 		}
 	}
 
-	inline void EventDespatcher::InvokeFunctions(DescriptorType descriptor)
+	 void EventFunc::EventDespatcher::InvokeFunctions(DescriptorType descriptor)
 	{
 		if (!sm_observers.contains(descriptor))
 		{
@@ -85,7 +86,7 @@ namespace Engine::Event {
 		}
 	}
 
-	inline void EventDespatcher::InvokeFunctions(DescriptorType descriptor, void* data)
+	 void EventFunc::EventDespatcher::InvokeFunctions(DescriptorType descriptor, void* data)
 	{
 		if (!sm_observers.contains(descriptor))
 		{
@@ -98,6 +99,6 @@ namespace Engine::Event {
 		{
 			observer(data);
 		}
-	}
+	}*/
 
 }

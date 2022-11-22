@@ -1,5 +1,6 @@
 #pragma once
-namespace Engine::Event {
+//https://github.com/Group2IsCrap/GameEngine/blob/main/FirelightEngine/Source/Events/Event.h
+namespace Engine::EventFunc {
 	class Event
 	{
 	public:
@@ -15,4 +16,6 @@ namespace Engine::Event {
 		static constexpr DescriptorType sm_descriptor = #eventName;\
 	};
 
+
+	NEW_EVENT(update);
 }
