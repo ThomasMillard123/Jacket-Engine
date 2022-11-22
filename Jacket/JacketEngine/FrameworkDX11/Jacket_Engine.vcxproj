@@ -395,6 +395,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="AnimatedModel.h" />
+    <ClInclude Include="EventSystem\EventDespatcher.h" />
+    <ClInclude Include="EventSystem\Event.h" />
     <ClInclude Include="RenderData\Buffers\DynamicConstantBuffer.h" />
     <ClInclude Include="ObjectData\RenderObject\DefaultObject.h" />
     <ClInclude Include="ObjectData\RenderObject\AnimatedObject.h" />
@@ -460,6 +462,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AnimatedModel.cpp" />
+    <ClCompile Include="EventSystem\Event.cpp" />
+    <ClCompile Include="EventSystem\EventDespatcher.cpp" />
     <ClCompile Include="RenderData\Buffers\DynamicConstantBuffer.cpp" />
     <ClCompile Include="ObjectData\RenderObject\DefaultObject.cpp" />
     <ClCompile Include="ObjectData\RenderObject\AnimatedObject.cpp" />
@@ -520,6 +524,9 @@
     <Image Include="Resources\stone.dds" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="EventSystem\EventDespatcher.inl">
+      <FileType>Document</FileType>
+    </ClInclude>
     <None Include="Maths\Vector2.inl" />
     <None Include="Maths\Vector3.inl" />
     <None Include="Terrain\TerrainA.fx">

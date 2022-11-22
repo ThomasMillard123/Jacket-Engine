@@ -18,7 +18,8 @@ namespace Engine::Core {
 			Cleanup();
 			return 0;
 		}*/
-
+		
+	
 		return true;
 	}
 
@@ -57,6 +58,7 @@ namespace Engine::Core {
 
 	void EngineClass::Update()
 	{
+		
 	}
 
 	void EngineClass::Draw()
@@ -76,11 +78,11 @@ namespace Engine::Core {
 
 	EngineClass::~EngineClass()
 	{
-		if (_Window) {
+		Graphics::Graphics::Instance()->CleanUp();
+		/*if (_Window) {
 			delete _Window;
 			_Window = nullptr;
-		}
-		Graphics::Graphics::Instance()->CleanUp();
+		}*/
 	}
 
 }

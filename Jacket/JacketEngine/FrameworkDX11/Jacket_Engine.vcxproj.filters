@@ -116,6 +116,8 @@
     <ClCompile Include="RenderData\RasterStateManager.cpp" />
     <ClCompile Include="ObjectData\RenderObject\DefaultObject.cpp" />
     <ClCompile Include="RenderData\Buffers\DynamicConstantBuffer.cpp" />
+    <ClCompile Include="EventSystem\Event.cpp" />
+    <ClCompile Include="EventSystem\EventDespatcher.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FileLoadExport\DDS\DDSTextureLoader.h">
@@ -250,6 +252,9 @@
     <ClInclude Include="RenderData\RasterStateManager.h" />
     <ClInclude Include="ObjectData\RenderObject\DefaultObject.h" />
     <ClInclude Include="RenderData\Buffers\DynamicConstantBuffer.h" />
+    <ClInclude Include="EventSystem\Event.h" />
+    <ClInclude Include="EventSystem\EventDespatcher.h" />
+    <ClInclude Include="EventSystem\EventDespatcher.inl" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="TextureLoading">
