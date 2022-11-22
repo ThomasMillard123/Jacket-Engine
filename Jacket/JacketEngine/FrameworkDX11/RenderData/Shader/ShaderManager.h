@@ -2,7 +2,7 @@
 #include<map>
 #include<string>
 #include"Shader.h"
-namespace Engine::Core::GraphicsCon {
+namespace Engine::Core::Graphics {
     class ShaderManager
     {
     public:

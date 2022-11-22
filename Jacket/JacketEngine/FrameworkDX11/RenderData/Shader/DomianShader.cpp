@@ -1,7 +1,15 @@
 #include "DomianShader.h"
 
-namespace Engine::Core::GraphicsCon {
-    HRESULT DomianShader::CreatDomianShader(const WCHAR* szFileName, ID3D11Device* pd3dDevice)
+namespace Engine::Core::Graphics {
+    DomianShader::DomianShader(const WCHAR* szFileName, ID3D11Device* pd3dDevice)
+    {
+        CreateShader(szFileName, pd3dDevice);
+    }
+    DomianShader::~DomianShader()
+    {
+        CleanUp();
+    }
+    HRESULT DomianShader::CreateShader(const WCHAR* szFileName, ID3D11Device* pd3dDevice)
     {
         // Compile the vertex shader
         ID3DBlob* pVSBlob = nullptr;
@@ -26,5 +34,12 @@ namespace Engine::Core::GraphicsCon {
 
 
         return hr;
+    }
+    void DomianShader::CleanUp()
+    {
+        if (_pDomainShader) {
+            _pDomainShader->Release();
+            _pDomainShader = nullptr;
+        }
     }
 }

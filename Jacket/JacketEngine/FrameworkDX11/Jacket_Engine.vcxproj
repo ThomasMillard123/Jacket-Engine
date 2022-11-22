@@ -395,13 +395,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="AnimatedModel.h" />
+    <ClInclude Include="RenderData\Buffers\DynamicConstantBuffer.h" />
     <ClInclude Include="ObjectData\RenderObject\DefaultObject.h" />
     <ClInclude Include="ObjectData\RenderObject\AnimatedObject.h" />
     <ClInclude Include="Appearance.h" />
     <ClInclude Include="Application.h" />
     <ClInclude Include="BillboradObject.h" />
     <ClInclude Include="Bone.h" />
-    <ClInclude Include="RenderData\Buffer.h" />
+    <ClInclude Include="RenderData\Buffers\Buffer.h" />
     <ClInclude Include="ObjectData\ObjectManager.h" />
     <ClInclude Include="ObjectData\RenderObject\Object.h" />
     <ClInclude Include="ObjectData\Materials\Material.h" />
@@ -414,7 +415,7 @@
     <ClInclude Include="RenderData\Shader\DomianShader.h" />
     <ClInclude Include="RenderData\Shader\HullShader.h" />
     <ClInclude Include="RenderData\Shader\GeometryShader.h" />
-    <ClInclude Include="Graphics.h" />
+    <ClInclude Include="RenderData\Graphics.h" />
     <ClInclude Include="RenderData\Shader\PixleShader.h" />
     <ClInclude Include="RenderData\Shader\Shader.h" />
     <ClInclude Include="Utilitys\C++HelperFunctions.h" />
@@ -437,12 +438,11 @@
     <ClInclude Include="Input\Mouse_Picking.h" />
     <ClInclude Include="Maths\PerlinNoise.h" />
     <ClInclude Include="Maths\Quaternion.h" />
-    <ClInclude Include="RansterStateManager.h" />
     <ClInclude Include="RenderData\RenderTargetControll.h" />
-    <ClInclude Include="RenderData\RenderTargetTextureClass.h" />
+    <ClInclude Include="RenderData\RenderTarget\RenderTargetTextureClass.h" />
     <CLInclude Include="resource.h" />
-    <ClInclude Include="ShaderController.h" />
-    <ClInclude Include="RenderData\ShadowMap.h" />
+    <ClInclude Include="RenderData\ShaderController.h" />
+    <ClInclude Include="RenderData\Shadows\ShadowMap.h" />
     <ClInclude Include="Skeleton.h" />
     <ClInclude Include="structures.h" />
     <ClInclude Include="Terrain\Terrain.h" />
@@ -460,13 +460,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AnimatedModel.cpp" />
+    <ClCompile Include="RenderData\Buffers\DynamicConstantBuffer.cpp" />
     <ClCompile Include="ObjectData\RenderObject\DefaultObject.cpp" />
     <ClCompile Include="ObjectData\RenderObject\AnimatedObject.cpp" />
     <ClCompile Include="Appearance.cpp" />
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="BillboradObject.cpp" />
     <ClCompile Include="Bone.cpp" />
-    <ClCompile Include="RenderData\Buffer.cpp" />
+    <ClCompile Include="RenderData\Buffers\Buffer.cpp" />
     <ClCompile Include="Camera\Camera.cpp" />
     <ClCompile Include="Camera\CameraController.cpp" />
     <ClCompile Include="DataStucts.cpp" />
@@ -482,7 +483,7 @@
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="RenderData\Shader\HullShader.cpp" />
     <ClCompile Include="RenderData\Shader\GeometryShader.cpp" />
-    <ClCompile Include="Graphics.cpp" />
+    <ClCompile Include="RenderData\Graphics.cpp" />
     <ClCompile Include="ImGuiManager.cpp" />
     <ClCompile Include="Input\InputControllor.cpp" />
     <ClCompile Include="Input\Keyboard.cpp" />
@@ -494,14 +495,12 @@
     <ClCompile Include="Input\MouseEvent.cpp" />
     <ClCompile Include="Input\MouseInput.cpp" />
     <ClCompile Include="Input\Mouse_Picking.cpp" />
-    <ClCompile Include="Maths\PerlinNoise.cpp" />
     <ClCompile Include="RenderData\Shader\PixleShader.cpp" />
-    <ClCompile Include="RansterStateManager.cpp" />
     <ClCompile Include="RenderData\RenderTargetControll.cpp" />
-    <ClCompile Include="RenderData\RenderTargetTextureClass.cpp" />
+    <ClCompile Include="RenderData\RenderTarget\RenderTargetTextureClass.cpp" />
     <ClCompile Include="RenderData\Shader\Shader.cpp" />
-    <ClCompile Include="ShaderController.cpp" />
-    <ClCompile Include="RenderData\ShadowMap.cpp" />
+    <ClCompile Include="RenderData\ShaderController.cpp" />
+    <ClCompile Include="RenderData\Shadows\ShadowMap.cpp" />
     <ClCompile Include="Skeleton.cpp" />
     <ClCompile Include="Terrain\Terrain.cpp" />
     <ClCompile Include="Terrain\TerrainAppearence.cpp" />
@@ -588,6 +587,16 @@
       <FileType>Document</FileType>
     </None>
     <None Include="RenderData\ObjectShaders\shaderNoNormalMap.fx">
+      <FileType>Document</FileType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RenderData\CommonShaderData\CommonData.fx">
+      <FileType>Document</FileType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RenderData\CommonShaderData\LightCommonData.fx">
       <FileType>Document</FileType>
     </None>
   </ItemGroup>

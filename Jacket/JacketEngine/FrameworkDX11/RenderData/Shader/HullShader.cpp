@@ -1,6 +1,14 @@
 #include "HullShader.h"
-namespace Engine::Core::GraphicsCon {
-    HRESULT HullShader::CreatHullShader(const WCHAR* szFileName, ID3D11Device* pd3dDevice)
+namespace Engine::Core::Graphics {
+    HullShader::HullShader(const WCHAR* szFileName, ID3D11Device* pd3dDevice)
+    {
+        CreateShader(szFileName, pd3dDevice);
+    }
+    HullShader::~HullShader()
+    {
+        CleanUp();
+    }
+    HRESULT HullShader::CreateShader(const WCHAR* szFileName, ID3D11Device* pd3dDevice)
     {
         // Compile the vertex shader
         ID3DBlob* pVSBlob = nullptr;
@@ -22,8 +30,13 @@ namespace Engine::Core::GraphicsCon {
         }
         _pHullShader = pHullShader;
 
-
-
         return hr;
+    }
+    void HullShader::CleanUp()
+    {
+        if (_pHullShader) {
+            _pHullShader->Release();
+            _pHullShader = nullptr;
+        }
     }
 }

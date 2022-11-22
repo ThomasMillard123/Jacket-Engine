@@ -1,6 +1,14 @@
 #include "PixleShader.h"
-namespace Engine::Core::GraphicsCon {
-    HRESULT PixleShader::CreatPixleShader(WCHAR* szFileName, ID3D11Device* pd3dDevice)
+namespace Engine::Core::Graphics {
+    PixleShader::PixleShader(const WCHAR* szFileName, ID3D11Device* pd3dDevice)
+    {
+        CreateShader(szFileName, pd3dDevice);
+    }
+    PixleShader::~PixleShader()
+    {
+        CleanUp();
+    }
+    HRESULT PixleShader::CreateShader(const WCHAR* szFileName, ID3D11Device* pd3dDevice)
     {
         // Compile the pixel shader
         ID3DBlob* pPSBlob = nullptr;
@@ -20,5 +28,12 @@ namespace Engine::Core::GraphicsCon {
 
 
         return hr;
+    }
+    void PixleShader::CleanUp()
+    {
+        if (_pPixelShader) {
+            _pPixelShader->Release();
+            _pPixelShader = nullptr;
+        }
     }
 }

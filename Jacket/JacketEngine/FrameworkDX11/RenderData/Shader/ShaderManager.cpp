@@ -1,4 +1,4 @@
 #include "ShaderManager.h"
-namespace Engine::Core::GraphicsCon {
+namespace Engine::Core::Graphics {
 
 }

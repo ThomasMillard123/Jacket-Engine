@@ -1,10 +1,14 @@
 #include "GeometryShader.h"
-namespace Engine::Core::GraphicsCon {
+namespace Engine::Core::Graphics {
     GeometryShader::GeometryShader(const WCHAR* szFileName, ID3D11Device* pd3dDevice)
     {
-        CreatGeometryShader(szFileName, pd3dDevice);
+        CreateShader(szFileName, pd3dDevice);
     }
-    HRESULT GeometryShader::CreatGeometryShader(const WCHAR* szFileName, ID3D11Device* pd3dDevice)
+    GeometryShader::~GeometryShader()
+    {
+        CleanUp();
+    }
+    HRESULT GeometryShader::CreateShader(const WCHAR* szFileName, ID3D11Device* pd3dDevice)
     {
         // Compile the vertex shader
         ID3DBlob* pVSBlob = nullptr;
@@ -29,5 +33,12 @@ namespace Engine::Core::GraphicsCon {
 
 
         return hr;
+    }
+    void GeometryShader::CleanUp()
+    {
+        if (_pGeometryShader) {
+            _pGeometryShader->Release();
+            _pGeometryShader = nullptr;
+        }
     }
 }

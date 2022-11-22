@@ -1,12 +1,14 @@
 #pragma once
 #include"Shader.h"
-namespace Engine::Core::GraphicsCon {
+namespace Engine::Core::Graphics {
     class PixleShader: public Shader
     {
-    public:
-        HRESULT CreatPixleShader(WCHAR* szFileName, ID3D11Device* pd3dDevice);
-    private:
-        ID3D11PixelShader* _pPixelShader;
+        public:
+            PixleShader(const WCHAR* szFileName, ID3D11Device* pd3dDevice);
+            ~PixleShader();
+            HRESULT CreateShader(const WCHAR* szFileName, ID3D11Device* pd3dDevice);
+            void CleanUp();
+        private:
+            ID3D11PixelShader* _pPixelShader;
     };
-
 }

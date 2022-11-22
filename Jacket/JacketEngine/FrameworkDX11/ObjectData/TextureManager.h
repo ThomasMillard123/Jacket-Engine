@@ -1,5 +1,5 @@
 #pragma once
-#include<map>
+#include<unordered_map>
 #include"Textures/Texture.h"
 
 namespace Engine::RenderObject {
@@ -20,7 +20,7 @@ namespace Engine::RenderObject {
         TextureManager() {};
         ~TextureManager() {};
     private:
-        std::map<std::string, Texture*> TextureMap;
+        std::unordered_map<std::string, Texture*> TextureMap;
 
     };
 

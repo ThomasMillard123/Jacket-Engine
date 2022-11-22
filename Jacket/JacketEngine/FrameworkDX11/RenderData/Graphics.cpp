@@ -1,18 +1,24 @@
 #include "Graphics.h"
-namespace Engine::Core::GraphicsCon {
+
+namespace Engine::Core::Graphics {
     bool Graphics::InitGraphics(HWND _hWnd)
     {
         HRESULT hr = S_OK;
+
+
+      
+
 
         RECT rc;
         GetClientRect(_hWnd, &rc);
         UINT width = rc.right - rc.left;
         UINT height = rc.bottom - rc.top;
+      
 
         UINT createDeviceFlags = 0;
-#ifdef _DEBUG
-        createDeviceFlags |= D3D11_CREATE_DEVICE_DEBUG;
-#endif
+        #ifdef _DEBUG
+            createDeviceFlags |= D3D11_CREATE_DEVICE_DEBUG;
+        #endif
 
         D3D_DRIVER_TYPE driverTypes[] =
         {
@@ -48,7 +54,10 @@ namespace Engine::Core::GraphicsCon {
                 break;
         }
         if (FAILED(hr))
-            return hr;
+            return false;
+
+
+
 
         // Obtain DXGI factory from device (since we used nullptr for pAdapter above)
         IDXGIFactory1* dxgiFactory = nullptr;
@@ -69,6 +78,10 @@ namespace Engine::Core::GraphicsCon {
         }
         if (FAILED(hr))
             return hr;
+
+
+
+
 
         // Create swap chain
         IDXGIFactory2* dxgiFactory2 = nullptr;
@@ -125,11 +138,16 @@ namespace Engine::Core::GraphicsCon {
 
         if (FAILED(hr))
             return hr;
+
+        return true;
     }
 
     Graphics* Graphics::Instance()
     {
         static Graphics GrpicsInstance;
         return &GrpicsInstance;
+    }
+    void Graphics::CleanUp()
+    {
     }
 }

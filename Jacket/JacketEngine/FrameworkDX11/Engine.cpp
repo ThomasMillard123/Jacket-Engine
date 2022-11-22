@@ -6,10 +6,12 @@ namespace Engine::Core {
 		_HInstance = hInstance;
 		_Window = new WindowCon::WindowContainer(hInstance, nCmdShow, width, Hight, WindowTitle, WindowClass);
 		if (!_Window)
-			return 0;
+			return false;
 
-		if (!GraphicsCon::Graphics::Instance()->InitGraphics(_Window->GetHWnd())) {
+		if (!Graphics::Graphics::Instance()->InitGraphics(_Window->GetHWnd())) {
 			//clean up
+			Graphics::Graphics::Instance()->CleanUp();
+			return false;
 		}
 		/*if (FAILED(InitDevice()))
 		{
@@ -17,10 +19,7 @@ namespace Engine::Core {
 			return 0;
 		}*/
 
-
-
 		return true;
-
 	}
 
 	EngineClass* EngineClass::Instance()
@@ -62,10 +61,26 @@ namespace Engine::Core {
 
 	void EngineClass::Draw()
 	{
+
+		//collect all objects
+			//shadows
+			//render world
+			
+		//post proccessing
+		//imgui render
+
+		//to screen
+		
+		
 	}
 
 	EngineClass::~EngineClass()
 	{
+		if (_Window) {
+			delete _Window;
+			_Window = nullptr;
+		}
+		Graphics::Graphics::Instance()->CleanUp();
 	}
 
 }

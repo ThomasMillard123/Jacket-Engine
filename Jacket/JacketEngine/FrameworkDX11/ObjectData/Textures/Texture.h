@@ -7,7 +7,7 @@ namespace Engine::RenderObject {
     class Texture
     {
         Texture();
-        Texture();
+        //Texture();
 
         ~Texture();
 

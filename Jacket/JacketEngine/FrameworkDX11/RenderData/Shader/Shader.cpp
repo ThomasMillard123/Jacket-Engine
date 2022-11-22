@@ -1,5 +1,6 @@
 #include "Shader.h"
-namespace Engine::Core::GraphicsCon {
+namespace Engine::Core::Graphics {
+    
     HRESULT Shader::CompileShaderFromFile(const WCHAR* szFileName, LPCSTR szEntryPoint, LPCSTR szShaderModel, ID3DBlob** ppBlobOut)
     {
         HRESULT hr = S_OK;
@@ -17,7 +18,7 @@ namespace Engine::Core::GraphicsCon {
 #endif
 
         ID3DBlob* pErrorBlob = nullptr;
-        hr = D3DCompileFromFile(szFileName, nullptr, nullptr, szEntryPoint, szShaderModel,
+        hr = D3DCompileFromFile(szFileName, nullptr, D3D_COMPILE_STANDARD_FILE_INCLUDE, szEntryPoint, szShaderModel,
             dwShaderFlags, 0, ppBlobOut, &pErrorBlob);
         if (FAILED(hr))
         {
